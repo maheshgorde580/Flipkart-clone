@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .nav {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search {
+            width: 50%;
+            height: 40px;
+            display: flex;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 0 40px;
+            font-size: 17px;
+            background-color: #f1f5ff;
+            border: none;
+        }
+
+        #mag {
+            font-size: 20px;
+            position: absolute;
+            padding: 10px;
+            color: #666;
+        }
+
+        .Login, .cart, .shop {
+            height: 40px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .Login i, .cart i, .shop i {
+            font-size: 20px;
+        }
+
+        .Login span, .cart p, .shop p {
+            font-size: 16px;
+        }
+
+        #m1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .main {
+            background-color: rgba(128, 128, 128, 0.1);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            gap: 20px;
+        }
+
+        .bnr1 {
+            width: 95%;
+            height: 120px;
+            background-color: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .card {
+            width: 11%;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .card p {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .bnr2 {
+            width: 95%;
+            height: 200px;
+        }
+
+        .bnr2 img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .sec-container {
+        width: 95%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+       
+        
+    }
+
+    .sec-container .name h1 {
+        font-size: 24px;
+        color: #212121;
+    }
+
+    .sec-container .square {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .product-card {
+        width: 150px;
+        
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+    .product-card p {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .ft{
+        width: 100%;
+        height: 40vh;
+        background-color: #212121;
+        display: flex;
+        padding: 40px;
+        justify-content: space-between;
+    }
+    .fql{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    .fql h1{
+        color: #736f68;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .fql a{
+        color: white;
+        text-decoration: none;  
+    }
+    .fql a:hover{
+        text-decoration: underline;
+    }
+    .vl{
+    border-left: 6px solid #303135;
+    height: 200px;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav">
+                <img src="./image/Flipkart logo.svg" alt="Flipkart Logo" height="40">
+                <div class="search">
+                    <input type="text" placeholder="Search for Products, Brands and More">
+                    <i class="fa-solid fa-magnifying-glass" id="mag"></i>
+                </div>
+                <button class="Login">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span>Login</span>
+                    <i class="fa-solid fa-angle-up"></i>
+                </button>
+                <button class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Cart</p>
+                </button>
+                <button class="shop">
+                    <i class="fa-solid fa-shop"></i>
+                    <p>Become a Seller</p>
+                </button>
+                <i class="fa-solid fa-ellipsis-vertical" id="m1"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="bnr1">
+            <div class="card"><img src="./image/img1.webp"/><p>Kilos</p></div>
+            <div class="card"><img src="./image/img2.webp"/><p>Mobiles</p></div>
+            <div class="card"><img src="./image/img3.jpg"/><p>Fashion</p></div>
+            <div class="card"><img src="./image/img4.jpg"/><p>Electronics</p></div>
+            <div class="card"><img src="./image/img5.jpg"/><p>Furniture</p></div>
+            <div class="card"><img src="./image/img6.jpg"/><p>Appliances</p></div>
+            <div class="card"><img src="./image/img7.jpg"/><p>Flight Bookings</p></div>
+            <div class="card"><img src="./image/img8.jpg"/><p>Beauty, Toys</p></div>
+        </div>
+
+        <div class="bnr2">
+            <img src="./image/second section.jpg" alt="Second Section Banner"/>
+        </div>
+
+        <div class="sec-container">
+            <div class="name">
+                <h1>Best of Electronics</h1>
+            </div>
+            <div class="square">
+                <div class="product-card">
+                    <img src="./image/main1.jpg" alt="Headphones">
+                    <p>Headphones</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main2.jpg" alt="Smartwatch">
+                    <p>Smartwatch</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main3.jpg" alt="Bluetooth Speaker">
+                    <p>Bluetooth Speaker</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main4.jpg" alt="Camera">
+                    <p>Camera</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main5.jpg" alt="Printer">
+                    <p>Printer</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main6.jpg" alt="Projector">
+                    <p>Projector</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/main7.jpg" alt="Monitors">
+                    <p>Monitors</p>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="third-container sec-container">
+            <div class="name">
+                <h1>Beauty, Food, Toys & More</h1>
+            </div>
+            <div class="square">
+                <div class="product-card">
+                    <img src="./image/third1.jpg">
+                    <p>Coffee Powder</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third2.jpg">
+                    <p>TopSelling Stationery</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third3.jpg">
+                    <p>Dry Fruits</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third4.jpg">
+                    <p>Remote Control Toys</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third5.jpg">
+                    <p>Geared Cycles</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third6.jpg">
+                    <p>Soft Toys</p>
+                </div>
+                <div class="product-card">
+                    <img src="./image/third7.jpg" >
+                    <p>Electric Cycles</p>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <footer>
+        <div class="ft">
+            <div class="fql">
+                <h1>ABOUT</h1>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Flipkart Stories</a>
+                <a href="#">Press</a>
+                <a href="#">Corporate Information</a>
+            </div>
+    
+            <div class="fql">
+                <h1>GROUP COMPANIES</h1>
+                <a href="#">Myntra</a>
+                <a href="#">Cleartrip</a>
+                <a href="#">Shopsy</a>
+                
+            </div>
+    
+            <div class="fql">
+                <h1>Help</h1>
+                <a href="#">Payments</a>
+                <a href="#">Shipping</a>
+                <a href="#">Cancellation & Returns</a>
+                <a href="#">FAQ</a>
+                
+            </div>
+    
+            <div class="fql">
+                <h1>CONSUMER POLICY</h1>
+                <a href="#">Cancellation & Returns r</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Security</a>
+                <a href="#">Privacy</a>
+                <a href="#">Sitemap</a>
+                <a href="#">Grievance Redressal</a>
+            </div>
+            <div class="vl"></div>
+    
+            <div class="fql">
+                <h1>Mail Us:</h1>
+                <a href="#">Flipkat Internet Privacy Limited,</a>
+                <a href="#">Buildings Alyssa, Begonia &</a>
+                <a href="#">Clove Embassy Tech Village,</a>
+                <a href="#">Outer Ring Road, Devarabeesanahalli Village,</a>
+                <a href="#">Bengaluru, 560103</a>
+                <a href="#">Karnataka, India</a>
+            </div>
+    
+            <div class="fql">
+                <h1>Registered Office Address:</h1>
+                <a href="#">Flipkat Internet Privacy Limited,</a>
+                <a href="#">Buildings Alyssa, Begonia &</a>
+                <a href="#">Clove Embassy Tech Village,</a>
+                <a href="#">Outer Ring Road, Devarabeesanahalli Village,</a>
+                <a href="#">Bengaluru, 560103</a>
+                <a href="#">Karnataka, India</a>
+                <a href="#">CIN : U51109KA2012PTC066107</a>
+                <a href="#"> Telephone: 044-45614700</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
